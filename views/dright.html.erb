@@ -1,0 +1,6 @@
+<h1>About Me</h1>
+<ul>
+  <% {:name => 'Dright', :age => 22, :favorite_programming_language => 'Ruby'}.each do |key,value| %>
+    <li><%= key.to_s.gsub('_',' ') %>: <%= value %></li>
+  <% end %>
+</ul>
