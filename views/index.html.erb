@@ -5,7 +5,12 @@
 </p>
 
 <p>
-  My Name is:
-  <%= @name %>
+  <%= (@request.query['name'] && !@request.query['name'].empty?) ? 
+            "Hello #{@request.query['name']}" : "Please enter your name" %>
 </p>
+
+<form method='post' action='<%= @request.path %>'>
+  Your name: <input type='text' name='name' placeholder='name' /><br />
+  <input type='submit' value='Submit'/>
+</form>
 
